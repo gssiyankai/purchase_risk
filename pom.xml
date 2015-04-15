@@ -55,6 +55,12 @@
             <version>2.0M10</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.jersey-test-framework</groupId>
+            <artifactId>jersey-test-framework-grizzly2</artifactId>
+            <version>1.19</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

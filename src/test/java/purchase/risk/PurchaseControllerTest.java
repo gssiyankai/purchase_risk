@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static purchase.risk.PurchaseController.*;
+import static purchase.risk.TestHelper.newPurchaseRequest;
 
 public class PurchaseControllerTest {
 
@@ -43,15 +44,6 @@ public class PurchaseControllerTest {
           PurchaseResponse response = controller.process(newPurchaseRequest(600));
           assertThat(response.isAccepted()).isFalse();
           assertThat(response.getReason()).isEqualTo(REASON_DEBT);
-     }
-
-     static PurchaseRequest newPurchaseRequest(int amount) {
-          PurchaseRequest request = new PurchaseRequest();
-          request.setEmail("john@doe");
-          request.setFirst_name("John");
-          request.setLast_name("Doe");
-          request.setAmount(amount);
-          return request;
      }
 
 }
