@@ -20,7 +20,9 @@ public class DecisionsService {
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     public PurchaseResponse process(PurchaseRequest request) {
-        return controller.process(request);
+        synchronized (this) {
+            return controller.process(request);
+        }
     }
 
 }
